@@ -1,0 +1,22 @@
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @for (user of users; track user.id) {
+        <div class="col">
+            <div class="card">
+                <img [src]="user.image" alt="user Image" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5>{{user.username}}</h5>
+                    <h5>{{user.email}}</h5>
+                    <h5>{{user.phone}}</h5>
+                    @if (user.is_verified) {
+                        <i class="fa-solid fa-star fa-lg" style="color: #00f5ab;"></i>
+                        <span> Verified</span>
+                    }
+                    @else {
+                        <i class="fa-solid fa-star fa-lg" style="color: #f50000;"></i>
+                        <span> not_verified</span>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>
